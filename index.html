@@ -101,7 +101,7 @@ el("drawerItems").addEventListener("click",function(e){var b=e.target.closest("[
 document.addEventListener("keydown",function(e){if(e.key==="Escape")toggleCart(false);});
 el("mobileToggle").addEventListener("click",function(){var menu=el("mobileMenu"),open=menu.classList.toggle("open");el("mobileToggle").setAttribute("aria-expanded",String(open));});
 Array.prototype.forEach.call(document.querySelectorAll("#mobileMenu a"),function(a){a.addEventListener("click",function(){el("mobileMenu").classList.remove("open");el("mobileToggle").setAttribute("aria-expanded","false");});});
-el("checkout").addEventListener("click",function(){if(!cart.length){e.preventDefault();toast("Tu carrito está vacío");}});
+el("checkout").addEventListener("click",function(e){if(!cart.length){e.preventDefault();toast("Tu carrito está vacío");}});
 el("year").textContent=new Date().getFullYear();renderCatalog();renderBoosts();renderCart();
 })();
 </script>
